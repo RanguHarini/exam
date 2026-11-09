@@ -1,13 +1,12 @@
-apiVersion:v1
+apiVersion: v1
 kind: Service
 metadata:
-  name: exam-service    
+  name: exam-service
 spec:
   selector:
-    app: exam
+    app: exam-deployment
   ports:
     - protocol: TCP
-      port: 5001
+      port: 80
       targetPort: 5001
-      nodePort: 30083
-  type: NodePort
+  type: ClusterIP
