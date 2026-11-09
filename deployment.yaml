@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment  
+metadata:
+  name: exam-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: exam
+  template:
+    metadata:
+      labels:
+        app: exam
+    spec:
+      containers:
+      - name: exam
+        image: ranguharini/exam:latest
+        ports:
+        - containerPort: 5001
